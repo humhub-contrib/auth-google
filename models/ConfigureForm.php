@@ -75,7 +75,7 @@ class ConfigureForm extends Model
         $settings = $module->settings;
 
         $this->enabled = (boolean)$settings->get('enabled');
-        $this->clientId = $settings->getSerialized('clientId');
+        $this->clientId = $settings->get('clientId');
         $this->clientSecret = $settings->get('clientSecret');
 
         $this->redirectUri = Url::to(['/user/auth/external', 'authclient' => 'google'], true);
