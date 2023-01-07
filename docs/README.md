@@ -10,7 +10,6 @@ Please follow the [Google instructions](https://developers.google.com/identity/p
 Once you have the **Client ID** and **Client Secret** created there, the values must then be entered in the module configuration at: `Administration -> Modules -> Google Auth -> Settings`. 
 This page also displays the `Authorized redirect URI`, which must be inserted in Google in the corresponding field.
 
-
-
-
-
+## Requirements
+- PHP 7.4+
+- `allow_url_fopen` **MUST** be enabled.
