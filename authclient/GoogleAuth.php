@@ -9,7 +9,6 @@ use yii\authclient\clients\Google;
  */
 class GoogleAuth extends Google
 {
-
     /**
      * @inheritdoc
      */

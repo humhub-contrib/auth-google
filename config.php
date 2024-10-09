@@ -7,6 +7,6 @@ return [
     'class' => 'humhubContrib\auth\google\Module',
     'namespace' => 'humhubContrib\auth\google',
     'events' => [
-        [Collection::class, Collection::EVENT_AFTER_CLIENTS_SET, ['humhubContrib\auth\google\Events', 'onAuthClientCollectionInit']]
+        [Collection::class, Collection::EVENT_AFTER_CLIENTS_SET, ['humhubContrib\auth\google\Events', 'onAuthClientCollectionInit']],
     ],
 ];
