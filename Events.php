@@ -21,7 +21,7 @@ class Events
             $authClientCollection->setClient('google', [
                 'class' => GoogleAuth::class,
                 'clientId' => ConfigureForm::getInstance()->clientId,
-                'clientSecret' => ConfigureForm::getInstance()->clientSecret
+                'clientSecret' => ConfigureForm::getInstance()->clientSecret,
             ]);
         }
     }
