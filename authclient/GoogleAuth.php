@@ -9,7 +9,6 @@ use yii\authclient\clients\Google;
  */
 class GoogleAuth extends Google
 {
-
     /**
      * @inheritdoc
      */
@@ -29,25 +28,11 @@ class GoogleAuth extends Google
     protected function defaultNormalizeUserAttributeMap()
     {
         return [
+            'id' => 'sub',
             'username' => 'displayName',
-            'firstname' => function ($attributes) {
-                if (!isset($attributes['given_name'])) {
-                    return '';
-                }
-
-                return $attributes['given_name'];
-            },
-            'lastname' => function ($attributes) {
-                if (!isset($attributes['family_name'])) {
-                    return '';
-                }
-
-                return $attributes['family_name'];
-            },
-            'title' => 'tagline',
-            'email' => function ($attributes) {
-                return $attributes['email'];
-            },
+            'firstname' => 'given_name',
+            'lastname' => 'family_name',
+            'email' => 'email',
         ];
     }
 }
