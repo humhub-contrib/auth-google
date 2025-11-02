@@ -1,18 +1,18 @@
 <?php
 
-namespace humhubContrib\auth\google\controllers;
+namespace humhubContrib\auth\moodle\controllers;
 
 use Yii;
 use humhub\modules\admin\components\Controller;
-use humhubContrib\auth\google\models\ConfigureForm;
+use humhubContrib\auth\moodle\models\ConfigureForm;
 
 /**
- * Module configuation
+ * Module configuration controller for Moodle authentication
  */
 class AdminController extends Controller
 {
     /**
-     * Render admin only page
+     * Render admin configuration page
      *
      * @return string
      */

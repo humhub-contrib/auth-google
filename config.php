@@ -2,11 +2,13 @@
 
 use humhub\modules\user\authclient\Collection;
 
+// Moodle Authentication Module Configuration
 return [
-    'id' => 'auth-google',
-    'class' => 'humhubContrib\auth\google\Module',
-    'namespace' => 'humhubContrib\auth\google',
+    'id' => 'auth-moodle',
+    'class' => 'humhubContrib\auth\moodle\Module',
+    'namespace' => 'humhubContrib\auth\moodle',
     'events' => [
-        [Collection::class, Collection::EVENT_AFTER_CLIENTS_SET, ['humhubContrib\auth\google\Events', 'onAuthClientCollectionInit']],
+        // Register the Moodle auth client when the auth client collection is initialized
+        [Collection::class, Collection::EVENT_AFTER_CLIENTS_SET, ['humhubContrib\auth\moodle\Events', 'onAuthClientCollectionInit']],
     ],
 ];

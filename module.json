@@ -1,11 +1,15 @@
 {
-    "id": "auth-google",
-    "name": "Google Sign-In",
-    "description": "Integrating Google Sign-In (OAuth 2.0).",
+    "id": "auth-moodle",
+    "name": "Moodle Sign-In",
+    "description": "Integrating Moodle Sign-In (OAuth 2.0).",
     "keywords": [
+        "moodle",
+        "oauth",
+        "authentication",
+        "lms"
     ],
-    "version": "1.1.0",
-    "homepage": "https://github.com/humhub-contrib/auth-google",
+    "version": "0.1.0",
+    "homepage": "https://github.com/Stefan-59/auth-moodle",
     "humhub": {
         "minVersion": "1.18"
     }
