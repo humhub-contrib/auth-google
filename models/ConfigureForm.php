@@ -1,14 +1,16 @@
 <?php
 
-namespace humhubContrib\auth\google\models;
+namespace humhubContrib\auth\moodle\models;
 
 use Yii;
 use yii\base\Model;
 use yii\helpers\Url;
-use humhubContrib\auth\google\Module;
+use humhubContrib\auth\moodle\Module;
 
 /**
- * The module configuration model
+ * Moodle Authentication Module Configuration Model
+ * 
+ * This model handles the configuration settings for Moodle OAuth authentication.
  */
 class ConfigureForm extends Model
 {
@@ -18,19 +20,24 @@ class ConfigureForm extends Model
     public $enabled;
 
     /**
-     * @var string the client id provided by Google
+     * @var string the client id provided by Moodle OAuth configuration
      */
     public $clientId;
 
     /**
-     * @var string the client secret provided by Google
+     * @var string the client secret provided by Moodle OAuth configuration
      */
     public $clientSecret;
 
     /**
-     * @var string readonly
+     * @var string readonly - The redirect URI that must be configured in Moodle
      */
     public $redirectUri;
+
+    // TODO: Consider adding Moodle-specific fields:
+    // - Moodle instance URL (base URL)
+    // - Custom OAuth endpoint URLs (if different from defaults)
+    // - User field mappings (if Moodle provides different field names)
 
     /**
      * @inheritdoc
@@ -49,9 +56,9 @@ class ConfigureForm extends Model
     public function attributeLabels()
     {
         return [
-            'enabled' => Yii::t('AuthGoogleModule.base', 'Enabled'),
-            'clientId' => Yii::t('AuthGoogleModule.base', 'Client ID'),
-            'clientSecret' => Yii::t('AuthGoogleModule.base', 'Client secret'),
+            'enabled' => Yii::t('AuthMoodleModule.base', 'Enabled'),
+            'clientId' => Yii::t('AuthMoodleModule.base', 'Client ID'),
+            'clientSecret' => Yii::t('AuthMoodleModule.base', 'Client secret'),
         ];
     }
 
@@ -61,6 +68,7 @@ class ConfigureForm extends Model
     public function attributeHints()
     {
         return [
+            // TODO: Add helpful hints for Moodle configuration
         ];
     }
 
@@ -70,7 +78,8 @@ class ConfigureForm extends Model
     public function loadSettings()
     {
         /** @var Module $module */
-        $module = Yii::$app->getModule('auth-google');
+        // TODO: Verify module ID matches the one in config.php
+        $module = Yii::$app->getModule('auth-moodle');
 
         $settings = $module->settings;
 
@@ -78,7 +87,8 @@ class ConfigureForm extends Model
         $this->clientId = $settings->get('clientId');
         $this->clientSecret = $settings->get('clientSecret');
 
-        $this->redirectUri = Url::to(['/user/auth/external', 'authclient' => 'google'], true);
+        // TODO: Test that this redirect URI format works with Moodle OAuth
+        $this->redirectUri = Url::to(['/user/auth/external', 'authclient' => 'moodle'], true);
     }
 
     /**
@@ -87,7 +97,8 @@ class ConfigureForm extends Model
     public function saveSettings()
     {
         /** @var Module $module */
-        $module = Yii::$app->getModule('auth-google');
+        // TODO: Verify module ID matches the one in config.php
+        $module = Yii::$app->getModule('auth-moodle');
 
         $module->settings->set('enabled', (bool)$this->enabled);
         $module->settings->set('clientId', $this->clientId);
