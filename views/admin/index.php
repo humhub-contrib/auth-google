@@ -16,7 +16,7 @@ use humhubContrib\auth\google\models\ConfigureForm;
             <p>
                 <?= Link::primary(Yii::t('AuthGoogleModule.base', 'Google Documentation'))
                     ->link('https://developers.google.com/identity/protocols/OpenIDConnect#registeringyourapp')
-                    ->blank()
+                    ->blank()->loader(false)
                     ->right()->sm() ?>
                 <?= Yii::t('AuthGoogleModule.base', 'Please follow the Google instructions to create the required <strong>OAuth client</strong> credentials.'); ?>
                 <br/>
