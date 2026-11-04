@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.2 (Unreleased)
+--------------------
+- Fix #20: Do not trust unverified Google emails; Prefill the username from the Google name; Allow clearing disabled settings
+
 1.1.1 (August 1, 2026)
 ----------------------
 - Fix: Update module resources path
