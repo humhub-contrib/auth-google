@@ -2,10 +2,10 @@
 
 namespace humhubContrib\auth\google\models;
 
+use humhubContrib\auth\google\Module;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Url;
-use humhubContrib\auth\google\Module;
 
 /**
  * The module configuration model
@@ -38,7 +38,7 @@ class ConfigureForm extends Model
     public function rules()
     {
         return [
-            [['clientId', 'clientSecret'], 'required'],
+            [['clientId', 'clientSecret'], 'required', 'when' => fn() => (bool)$this->enabled],
             [['enabled'], 'boolean'],
         ];
     }
