@@ -18,7 +18,7 @@ class GoogleAuth extends Google
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fa fa-google',
+            'cssIcon' => 'ti ti-brand-google',
             'buttonBackgroundColor' => '#e0492f',
         ];
     }

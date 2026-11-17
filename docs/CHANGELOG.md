@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.2.0 (Unreleased)
+--------------------
+- Enh: Update for HumHub 1.20 (Tabler icon for the Google login button)
+
 1.1.2 (Unreleased)
 --------------------
 - Fix #20: Do not trust unverified Google emails; Prefill the username from the Google name; Allow clearing disabled settings
